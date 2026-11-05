@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babusya's First Sats · BCH BLAZE 2026 Media</title>
+<meta name="description" content="A short animated film about an 81-year-old grandmother, a birthday Cash Stamp and a honey stall that only took cash. BCH BLAZE 2026, Media track.">
+<style>
+  :root{
+    --bg:#fbf5ea; --paper:#fffaf1; --ink:#2b2117; --muted:#6f5d49; --line:#e8d9c1;
+    --honey:#d98a1c; --honey-dark:#a8620b; --green:#1f9d55; --banner:#2b2117; --banner-ink:#fbf5ea;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#17120c; --paper:#211a12; --ink:#f3e8d6; --muted:#bba98f; --line:#3a2e20;
+           --honey:#f0a53a; --honey-dark:#f0a53a; --green:#3ccf7a; --banner:#0d0a06; --banner-ink:#f3e8d6; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Iowan Old Style","Palatino Linotype",serif}
+  a{color:var(--honey-dark)}
+  .wrap{max-width:980px;margin:0 auto;padding:0 16px}
+
+  /* obligatory BLAZE header banner */
+  .blaze{background:var(--banner);color:var(--banner-ink);font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+  .blaze .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;padding-top:10px;padding-bottom:10px}
+  .blaze strong{letter-spacing:.04em}
+  .blaze a{color:var(--banner-ink);text-decoration:underline;text-underline-offset:3px}
+  .blaze .addr{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+  .blaze code{font:12.5px ui-monospace,Menlo,monospace;background:rgba(255,255,255,.1);padding:3px 6px;border-radius:4px;word-break:break-all}
+  .blaze button{font:inherit;font-size:12.5px;border:1px solid rgba(255,255,255,.35);background:transparent;color:inherit;border-radius:4px;padding:2px 8px;cursor:pointer}
+  .tag{display:inline-block;background:var(--honey);color:#1c1309;border-radius:3px;padding:1px 7px;font-weight:600;font-size:12.5px}
+
+  header.hero{padding:48px 0 24px}
+  .kicker{font:600 13px ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:8px 0 14px;letter-spacing:-.01em}
+  .lede{font-size:19px;max-width:640px;color:var(--ink)}
+  .status{margin-top:22px;border-left:4px solid var(--honey);background:var(--paper);padding:14px 16px;max-width:680px;font-size:16px}
+  .status b{font-family:ui-sans-serif,system-ui,sans-serif}
+
+  h2{font-size:26px;margin:56px 0 10px}
+  .sub{color:var(--muted);margin:0 0 20px;max-width:680px}
+  .cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  figure{margin:0}
+  figure img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid var(--line);background:var(--paper)}
+  figcaption{font:13.5px/1.4 ui-sans-serif,system-ui,sans-serif;color:var(--muted);margin-top:6px}
+  figcaption b{color:var(--ink)}
+
+  .beats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+  .beats figcaption{font-size:12.5px}
+  .cut{grid-column:1/-1;font:600 12.5px ui-sans-serif,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:4px}
+
+  table{width:100%;border-collapse:collapse;font:15px/1.45 ui-sans-serif,system-ui,sans-serif}
+  th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  td.t{white-space:nowrap;color:var(--muted)}
+  .scroll{overflow-x:auto}
+
+  .plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .card h3{margin:0 0 6px;font-size:18px}
+  .card ul{margin:0;padding-left:18px}
+  .done{color:var(--green);font-weight:600}
+
+  footer{margin:64px 0 40px;padding-top:18px;border-top:1px solid var(--line);font:14px/1.5 ui-sans-serif,system-ui,sans-serif;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- BCH BLAZE 2026 obligatory header banner (Media track) -->
+<div class="blaze" role="region" aria-label="BCH BLAZE 2026 project banner">
+  <div class="wrap">
+    <span><span class="tag">BCH BLAZE 2026</span> <strong>Media track</strong></span>
+    <span class="addr">EMBER2026 / donations:
+      <code id="addr">bitcoincash:zADDRESS_PENDING</code>
+      <button type="button" id="copy">copy</button>
+    </span>
+    <a href="./start/">Starting point, as of 14 Nov</a>
+    <a href="#final">Finished film (22 Nov)</a>
+    <a href="https://github.com/DmitriyTopka/bch-babusya">Source &amp; assets</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="hero">
+    <div class="kicker">Animated short · 9:16 · about 45 seconds</div>
+    <h1>Babusya's First Sats</h1>
+    <p class="lede">Babusya is 81 and has never trusted a bank. For her birthday her grandson gives her a little green card. She thinks it's a lottery ticket. By lunch the next day, half the market is taking Bitcoin Cash.</p>
+    <div class="status" id="final">
+      <b>Day 0.</b> This is the starting point frozen on 14 November: script, storyboard, character art and the key frames. The animation, voices, music and edit are made during the hackathon, 14 to 22 November. The finished film will appear right here.
+    </div>
+  </header>
+
+  <section>
+    <h2>The people</h2>
+    <p class="sub">Three characters, one style. Everything is set in 2026: modern clothes, modern phones, a real farmers' market.</p>
+    <div class="cast">
+      <figure><img src="assets/cast/R2_babusya_head.jpg" alt="Babusya, an 81-year-old grandmother with a short silver bob and round tortoiseshell glasses" loading="lazy"><figcaption><b>Babusya, 81.</b> Has always paid in cash.</figcaption></figure>
+      <figure><img src="assets/cast/R4_vnuk_head.jpg" alt="Taras, a 20-year-old grandson in a mustard hoodie" loading="lazy"><figcaption><b>Taras, 20.</b> The grandson with the birthday idea.</figcaption></figure>
+      <figure><img src="assets/cast/R6_did_head.jpg" alt="Petro, a 68-year-old beekeeper with a thick grey beard and an olive cap" loading="lazy"><figcaption><b>Petro, 68.</b> Sells honey. Cash only.</figcaption></figure>
+      <figure><img src="assets/cast/R8_stamp.jpg" alt="A green Cash Stamp card with a perforated edge and a QR code" loading="lazy"><figcaption><b>The card.</b> A Cash Stamp: a paper gift that holds real BCH.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>The story in 17 frames</h2>
+    <p class="sub">Each frame is the end of one shot and the start of the next, so the animation can run as one chain. One hard cut: from the kitchen in the evening to the market the next morning.</p>
+    <div class="beats">
+      <figure><img src="assets/frames/F01.jpg" alt="Kitchen, birthday cake, grandson hands her an envelope" loading="lazy"><figcaption>1. Birthday. An envelope.</figcaption></figure>
+      <figure><img src="assets/frames/F02.jpg" alt="She holds a green card" loading="lazy"><figcaption>2. A green card inside.</figcaption></figure>
+      <figure><img src="assets/frames/F03.jpg" alt="Close-up, eyebrow raised" loading="lazy"><figcaption>3. "Lottery ticket?"</figcaption></figure>
+      <figure><img src="assets/frames/F04.jpg" alt="Grandson shows her his phone" loading="lazy"><figcaption>4. One free app.</figcaption></figure>
+      <figure><img src="assets/frames/F05.jpg" alt="Her hands scan the card with a phone" loading="lazy"><figcaption>5. One scan.</figcaption></figure>
+      <figure><img src="assets/frames/F06.jpg" alt="Her face lit green by the phone, slow smile" loading="lazy"><figcaption>6. It's real money.</figcaption></figure>
+      <figure><img src="assets/frames/F07.jpg" alt="Grandson gives her a stack of cards" loading="lazy"><figcaption>7. "For your friends."</figcaption></figure>
+      <div class="cut">Cut · next morning</div>
+      <figure><img src="assets/frames/F08.jpg" alt="Market from above, she walks in" loading="lazy"><figcaption>8. The market, next morning.</figcaption></figure>
+      <figure><img src="assets/frames/F09.jpg" alt="At the honey stall" loading="lazy"><figcaption>9. The honey stall.</figcaption></figure>
+      <figure><img src="assets/frames/F10.jpg" alt="Beekeeper shakes his head" loading="lazy"><figcaption>10. "Cash only."</figcaption></figure>
+      <figure><img src="assets/frames/F11.jpg" alt="She puts a card on his counter" loading="lazy"><figcaption>11. She slides a card over.</figcaption></figure>
+      <figure><img src="assets/frames/F12.jpg" alt="His phone scans the card" loading="lazy"><figcaption>12. He scans it.</figcaption></figure>
+      <figure><img src="assets/frames/F13.jpg" alt="Beekeeper surprised and pleased" loading="lazy"><figcaption>13. Eyebrows up.</figcaption></figure>
+      <figure><img src="assets/frames/F14.jpg" alt="She pays, he bags a jar of honey" loading="lazy"><figcaption>14. She pays for honey.</figcaption></figure>
+      <figure><img src="assets/frames/F15.jpg" alt="She hands cards along the row" loading="lazy"><figcaption>15. Down the row.</figcaption></figure>
+      <figure><img src="assets/frames/F16.jpg" alt="Market from high above" loading="lazy"><figcaption>16. The whole market.</figcaption></figure>
+      <figure><img src="assets/frames/F17.jpg" alt="Market from above with green markers on every stall" loading="lazy"><figcaption>17. Every stall lights up.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>The script</h2>
+    <p class="sub">Voice-over by the grandson. Burned-in subtitles, because most people watch on mute.</p>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Time</th><th>Picture</th><th>Voice</th></tr></thead>
+      <tbody>
+        <tr><td class="t">0:00</td><td>Birthday cake. She opens an envelope, a green card falls out.</td><td>"My grandma has never trusted a bank."</td></tr>
+        <tr><td class="t">0:05</td><td>She holds the card up to her glasses and squints.</td><td>"So for her birthday, I gave her this. She thought it was a lottery ticket."</td></tr>
+        <tr><td class="t">0:10</td><td>He installs the wallet for her. She scans the card herself. Ding.</td><td>"One free app. One scan. No bank. No paperwork."</td></tr>
+        <tr><td class="t">0:17</td><td>A slow smile. He puts a stack of cards in front of her.</td><td>"Then I gave her a few more. For her friends."</td></tr>
+        <tr><td class="t">0:21</td><td>Next morning. The beekeeper shakes his head.</td><td>"Next morning, the honey guy said: cash only."</td></tr>
+        <tr><td class="t">0:25</td><td>She puts a card on his counter. He scans it. Ding. Eyebrows up.</td><td>"She made him install the app. Then scan."</td></tr>
+        <tr><td class="t">0:32</td><td>Green cards travel from stall to stall.</td><td>"By lunch, half the market had a wallet."</td></tr>
+        <tr><td class="t">0:36</td><td>She pays phone to phone. He bags a jar of honey.</td><td>"Fee? Less than a cent."</td></tr>
+        <tr><td class="t">0:41</td><td>The camera rises over the market. Every stall glows green.</td><td>"Bitcoin Cash. Even for Babusya."</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>What happens in the 8 days</h2>
+    <p class="sub">Judged on the difference between this page and the finished one, so here is the line between them.</p>
+    <div class="plan">
+      <div class="card">
+        <h3>Ready on 14 Nov</h3>
+        <ul>
+          <li class="done">Script and voice lines</li>
+          <li class="done">Storyboard, 16 chained key frames</li>
+          <li class="done">Three characters, market and kitchen</li>
+          <li class="done">Shot list with camera moves</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Made 14 to 22 Nov</h3>
+        <ul>
+          <li>All 15 animated shots</li>
+          <li>Voice-over and two character lines</li>
+          <li>Music and the wallet "ding"</li>
+          <li>Wallet screens, subtitles, edit</li>
+          <li>The 45-second film, 9:16 and 16:9</li>
+          <li>Three 15-second cuts for social</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Storyboard sheets</h2>
+    <div class="cast" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
+      <figure><img src="assets/sheets/chain_kitchen.jpg" alt="Kitchen sequence storyboard sheet" loading="lazy"><figcaption>Kitchen, evening.</figcaption></figure>
+      <figure><img src="assets/sheets/chain_market.jpg" alt="Market sequence storyboard sheet" loading="lazy"><figcaption>Market, morning.</figcaption></figure>
+      <figure><img src="assets/sheets/refs.jpg" alt="Character and location reference sheet" loading="lazy"><figcaption>Character and location references.</figcaption></figure>
+    </div>
+  </section>
+
+  <footer>
+    Made for the BCH BLAZE 2026 Media track by Dmytro Topka (DoraHacks: DmitriyTopka), Ukraine.
+    Character art and frames are AI-generated, which the Media track allows. Cash Stamps are a real BCH gift card format (stamps.cash); the cards and wallet screens in the film are illustrations.
+    Not financial advice.
+  </footer>
+</main>
+
+<script>
+  (function(){
+    var b=document.getElementById('copy'), a=document.getElementById('addr');
+    if(!b||!a) return;
+    b.addEventListener('click',function(){
+      var t=a.textContent.trim();
+      try{ navigator.clipboard.writeText(t).then(function(){ b.textContent='copied'; setTimeout(function(){b.textContent='copy';},1500); }); }
+      catch(e){ var r=document.createRange(); r.selectNodeContents(a); var s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 An animated short for the BCH BLAZE 2026 Media track.
 
-Babusya is 81 and has never trusted a bank. For her birthday her grandson gives her a Cash Stamp, a little green card that holds real Bitcoin Cash. She thinks it's a lottery ticket. The next morning she talks the honey seller at the market into scanning one, and by lunch half the market has a wallet.
+Babusya is 81 and has never trusted a bank. For her birthday her grandson gives her a Cash Stamp, a little green card that holds real Bitcoin Cash. She thinks it's a lottery ticket. The next morning she talks the honey seller at the market into scanning one, and by lunch four more stalls take Bitcoin Cash.
 
 Live page: https://dmitriytopka.github.io/bch-babusya/
 
